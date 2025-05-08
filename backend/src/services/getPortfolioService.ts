@@ -1,5 +1,5 @@
 import yahooFinance from "yahoo-finance2"
-import {PortfolioReport, StockHolding } from "../models/portfolioModel"
+import {PortfolioReport, StockHolding, SectorSummary } from "../models/portfolioModel"
 
 let cachedPortfolio: PortfolioReport[] = [];
 export const getCachedPortfolio = () => cachedPortfolio;
@@ -56,4 +56,33 @@ export const portfolioService = async (holdings: StockHolding[]): Promise<Portfo
     }));
 
     return cachedPortfolio;
+}
+
+export const sectorSummaryService = async (): Promise<SectorSummary[]> => {
+    const portfolio = getCachedPortfolio();
+
+    const summaryMap: { [sector: string]: SectorSummary } = {};
+
+    portfolio.forEach(stock => {
+        const sector = stock.sector;
+        if (!summaryMap[sector]) {
+            summaryMap[sector] = {
+                sector,
+                totalInvestment: 0,
+                totalPresentValue: 0,
+                totalGainLoss: 0,
+            };
+        }
+
+        summaryMap[sector].totalInvestment += stock.purchasePrice * stock.quantity;
+        summaryMap[sector].totalPresentValue += stock.presentValue;
+        summaryMap[sector].totalGainLoss += stock.gainLoss;
+    });
+
+    return Object.values(summaryMap).map(data => ({
+        sector: data.sector,
+        totalInvestment: Math.round(data.totalInvestment * 100) / 100,
+        totalPresentValue: Math.round(data.totalPresentValue * 100) / 100,
+        totalGainLoss: Math.round(data.totalGainLoss * 100) / 100,
+    }));
 }

@@ -14,6 +14,13 @@ export interface PortfolioReport extends StockHolding {
     gainLoss: number;
 }
 
+export interface SectorSummary {
+    sector: string;
+    totalInvestment: number;
+    totalPresentValue: number;
+    totalGainLoss: number;
+}
+
 
 export const holdings: StockHolding[] = [
     // Financial Sector
