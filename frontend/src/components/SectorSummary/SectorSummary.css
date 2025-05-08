@@ -1,0 +1,128 @@
+.sector-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .sector-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1f2937;
+  }
+  
+  .cards-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+  }
+  
+  .card {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    transition: transform 0.2s ease-in-out;
+    flex: 0 0 200px;
+    min-width: 200px;
+    max-width: 200px;
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .card-color-1 {
+    background-color: #f0f9ff; /* Light Blue */
+  }
+  
+  .card-color-2 {
+    background-color: #f3f4f6; /* Light Gray */
+  }
+  
+  .card-color-3 {
+    background-color: #fefce8; /* Light Yellow */
+  }
+  
+  .card-color-4 {
+    background-color: rgba(252, 221, 252, 0.333); /* Light Stone */
+  }
+  
+  .card-color-5 {
+    background-color: #ecfdf5; /* Light Green */
+  }
+  
+  .card-color-6 {
+    background-color: #fdf2f2; /* Light Pink */
+  }
+  
+  .card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #111827;
+  }
+  
+  .card-text {
+    font-size: 0.75rem;
+    color: #4b5563;
+    margin-bottom: 0.25rem;
+  }
+  
+  .card-gain-loss {
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .gain {
+    color: #15803d;
+  }
+  
+  .loss {
+    color: #b91c1c;
+  }
+  
+  .no-data-message {
+    font-size: 0.875rem;
+    color: #6b7280;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 640px) {
+    .card {
+      flex: 0 0 180px;
+      min-width: 180px;
+      max-width: 180px;
+    }
+  }
+  
+  @media (min-width: 640px) {
+    .sector-container {
+      padding: 1.5rem;
+    }
+  
+    .card {
+      padding: 1.25rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .sector-container {
+      max-width: 1200px;
+    }
+  }
+  
+  /* Hide scrollbar for cleaner look but keep functionality */
+  .cards-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .cards-wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }

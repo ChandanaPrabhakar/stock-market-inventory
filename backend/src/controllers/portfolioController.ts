@@ -3,7 +3,7 @@ import { getCachedPortfolio, sectorSummaryService } from "../services/getPortfol
 
 export const getPortfolio = async(req: Request, res: Response) => {
     try{
-        const portfolio = await getCachedPortfolio;
+        const portfolio = await getCachedPortfolio();
         res.status(200).json({portfolio});
     } catch(error){
         console.error("Error fetching data", error);
