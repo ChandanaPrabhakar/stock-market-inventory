@@ -27,9 +27,7 @@ const MyHoldings = ({ portfolioData }) => {
             <td>{stock.cmp.toLocaleString()}</td>
             <td>{stock.investment.toLocaleString()}</td>
             <td>{stock.presentValue.toLocaleString()}</td>
-            <td>
-              {stock.gainLoss.toLocaleString()}
-            </td>
+            <td className={stock.gainLoss >= 0 ? 'gain' : 'loss'}>{stock.gainLoss.toLocaleString()}</td>
             <td>{stock.portfolioPercentage}%</td>
           </tr>
         ))}
