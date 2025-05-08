@@ -1,0 +1,80 @@
+/* Styling for the MyHoldings table component */
+table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: #333333; /* Slight grey background for table body */
+    border: 1px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Table header styling */
+  thead tr {
+    background: #000000; /* Black background for table head */
+  }
+  
+  th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1rem;
+    border-bottom: 2px solid #ffffff;
+  }
+  
+  /* Table body styling */
+  tbody tr {
+    border-bottom: 1px solid #ffffff;
+  }
+  
+  td {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+  
+  /* Hover effect for table rows */
+  tbody tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Gain/Loss column styling */
+  td:nth-child(8) {
+    font-weight: medium;
+  }
+  
+  td:nth-child(8):before {
+    content: '₹';
+  }
+  
+  /* Conditional coloring for Gain/Loss */
+  td:nth-child(8) {
+    color: #22c55e; /* Green for positive */
+  }
+  
+  td:nth-child(8):has(> span:where(*:not(:empty))) {
+    color: #ef4444; /* Red for negative */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  
+    th, td {
+      min-width: 100px;
+      font-size: 0.85rem;
+      padding: 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    th, td {
+      font-size: 0.75rem;
+      padding: 6px;
+    }
+  }

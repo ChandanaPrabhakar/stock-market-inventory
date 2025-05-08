@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import {config} from 'dotenv';
 import { portfolioService } from './services/getPortfolioService';
 import routes from './routes/portfolioRoutes';
@@ -8,10 +9,6 @@ config();
 const app = express();
 
 app.use(express.json());
-
-portfolioService(holdings);
-setInterval(() => portfolioService(holdings), 15000);
-
 app.use('/api', routes);
 
 const PORT = process.env.PORT;
