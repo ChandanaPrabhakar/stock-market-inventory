@@ -2,6 +2,15 @@ import React from 'react';
 import './MyHoldings.css';
 
 const MyHoldings = ({ portfolioData }) => {
+  const sectorMap = {
+    'Financial': 0,
+    'Tech': 1,
+    'Consumer': 2,
+    'Power': 3,
+    'Pipe': 4,
+    'Others': 5
+  };
+
   return (
     <table>
       <thead>
@@ -19,7 +28,7 @@ const MyHoldings = ({ portfolioData }) => {
       </thead>
       <tbody>
         {portfolioData?.map((stock, index) => (
-          <tr key={index}>
+          <tr key={index} className={`sector-${sectorMap[stock.sector] || 5}`}>
             <td>{stock.particulars}</td>
             <td>{stock.purchasePrice.toLocaleString()}</td>
             <td>{stock.quantity}</td>

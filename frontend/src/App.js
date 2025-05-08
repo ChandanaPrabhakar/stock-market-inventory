@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import MyHoldings from './components/MyHoldings/MyHoldingsTable';
 import SectorSummary from './components/SectorSummary/SectorSummary';
+import PieChart from './components/PieChart/PieChart';
 
 // function App() {
 //   return (
@@ -39,6 +40,7 @@ function App() {
     <div className="p-6 font-sans">
       <h1 className="text-xl font-bold mb-4">Portfolio Response</h1>
       <SectorSummary summaryData = {summaryData?.summary} />
+      <PieChart summaryData={summaryData?.summary}/>
       <MyHoldings portfolioData={data?.portfolio}/> 
     </div>
   );
