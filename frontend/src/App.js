@@ -30,7 +30,6 @@ function App() {
 
   return (
     <div className="p-6 font-sans">
-      <h1 className="text-xl font-bold mb-4">Portfolio Response</h1>
       <PortfolioSummary portfolioData={data?.portfolio}/>
       <SectorSummary summaryData = {summaryData?.summary} />
       <PieChart summaryData={summaryData?.summary}/>
