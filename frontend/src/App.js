@@ -14,8 +14,8 @@ function App() {
     const fetchData = async () => {
       try {
         const [portfolioRes, summaryRes] = await Promise.all([
-          axios.get(`${process.env.REACT_APP_API_URL}/api/portfolio`),
-          axios.get(`${process.env.REACT_APP_API_URL}/api/sectorsummary`)
+          axios.get('http://localhost:8080/api/portfolio'),
+          axios.get('http://localhost:8080/api/sectorsummary')
         ]);
   
         setData(portfolioRes.data);
