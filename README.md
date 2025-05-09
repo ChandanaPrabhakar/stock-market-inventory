@@ -42,22 +42,22 @@ _Include a few screenshots or gifs here if possible to showcase the UI._
 git clone https://github.com/ChandanaPrabhakar/stock-market-inventory.git
 cd stock-market-inventory
 
-```bash
 cd frontend
 npm install
 
 cd backend
 npm install
+```
 
-Backend
+## Backend
 npm run dev
 
-Frontend
+## Frontend
 npm start
 
-📄 License
+### 📄 License
 MIT
 
-📬 Contact
+### 📬 Contact
 Chandana Prabhakar
 cp.devang@gmail.com
