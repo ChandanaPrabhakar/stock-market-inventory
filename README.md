@@ -13,12 +13,6 @@ A full-stack web application to visualize and manage your investment portfolio. 
 
 ---
 
-## 📸 Screenshots
-
-_Include a few screenshots or gifs here if possible to showcase the UI._
-
----
-
 ## 🛠 Tech Stack
 
 ### Frontend:
@@ -50,11 +44,13 @@ npm install
 ```
 
 ## Backend
+```bash
 npm run dev
-
+```
 ## Frontend
+```bash
 npm start
-
+```
 ### 📄 License
 MIT
 
