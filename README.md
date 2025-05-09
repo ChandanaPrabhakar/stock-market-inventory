@@ -52,7 +52,7 @@ npm run dev
 npm start
 ```
 ### 📄 License
-MIT
+This project is licensed under the [MIT License](LICENSE).
 
 ### 📬 Contact
 Chandana Prabhakar
