@@ -4,15 +4,7 @@ import { useState, useEffect } from 'react';
 import MyHoldings from './components/MyHoldings/MyHoldingsTable';
 import SectorSummary from './components/SectorSummary/SectorSummary';
 import PieChart from './components/PieChart/PieChart';
-
-// function App() {
-//   return (
-//     <div className="App">
-//     </div>
-//   );
-// }
-
-// export default App;
+import PortfolioSummary from './components/PortfolioSummary/PortfolioSummary';
 
 function App() {
   const [data, setData] = useState({ portfolio: [] });
@@ -38,7 +30,6 @@ function App() {
 
   return (
     <div className="p-6 font-sans">
-      <h1 className="text-xl font-bold mb-4 ">Investments Portfolio Dashboard</h1>
       <PortfolioSummary portfolioData={data?.portfolio}/>
       <SectorSummary summaryData = {summaryData?.summary} />
       <PieChart summaryData={summaryData?.summary}/>
