@@ -14,8 +14,8 @@ function App() {
     const fetchData = async () => {
       try {
         const [portfolioRes, summaryRes] = await Promise.all([
-          axios.get('http://localhost:8080/api/portfolio'),
-          axios.get('http://localhost:8080/api/sectorsummary')
+          axios.get('https://stock-market-inventory.onrender.com/api/portfolio'),
+          axios.get('https://stock-market-inventory.onrender.com/api/sectorsummary')
         ]);
   
         setData(portfolioRes.data);
